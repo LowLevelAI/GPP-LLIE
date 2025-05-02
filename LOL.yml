@@ -1,0 +1,74 @@
+name: GPP_LLIE
+distortion: Low Light
+scale: 1
+gpu_ids: [0]
+
+#### datasets
+datasets:
+  train:
+    root: LOLDataset
+    quant: 32
+    use_resize_crop: True
+    use_shuffle: true
+    n_workers: 1 
+    batch_size: 1
+    use_rot: true
+    use_flip: true
+    color: RGB
+    use_crop: true
+    GT_size: 320
+    
+
+  val:
+    root: LOLDataset
+    n_workers: 1
+    quant: 32
+    n_max: 20
+    GT_size: 256
+    batch_size: 1 # must be 1
+
+
+path:
+  # pretrain_model_G: ../pretrained_models/RRDB_DF2K_8X.pth
+  strict_load: true
+  resume_state: ~
+
+
+
+path:
+  # pretrain_model_G: ../pretrained_models/RRDB_DF2K_8X.pth
+  strict_load: true
+  resume_state: auto
+
+#### training settings: learning rate scheme, loss
+train:
+  manual_seed: 10
+  lr_G: !!float 5e-4 # normalizing flow 5e-4; l1 loss train 5e-5
+  weight_decay_G: 0 # 1e-5 # 5e-5 # 1e-5
+  beta1: 0.9
+  beta2: 0.99
+  lr_scheme: MultiStepLR
+  warmup_iter: -1  # no warm up
+  lr_steps_rel: [ 0.5, 0.75, 0.9, 0.95 ] # [0.2, 0.35, 0.5, 0.65, 0.8, 0.95]  # [ 0.5, 0.75, 0.9, 0.95 ]
+  lr_gamma: 0.5
+
+  weight_l1: 0
+  # flow_warm_up_iter: -1
+  weight_fl: 1
+
+  niter: 5 #200000
+  val_freq: 200 # 200
+
+#### validation settings
+val:
+  # heats: [ 0.0, 0.5, 0.75, 1.0 ]
+  n_sample: 4
+
+test:
+  heats: [ 0.0, 0.7, 0.8, 0.9 ]
+
+#### logger
+logger:
+  # Debug print_freq: 100
+  print_freq: 100
+  save_checkpoint_freq: !!float 1e3
