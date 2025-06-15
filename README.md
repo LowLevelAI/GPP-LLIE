@@ -60,7 +60,7 @@ cd GPP-LLIE
 - **Build CUDA extensions:**
   
   ```bash
-  cd GLARE/defor_cuda_ext
+  cd defor_cuda_ext
   BASICSR_EXT=True python setup.py develop
   ```
 
