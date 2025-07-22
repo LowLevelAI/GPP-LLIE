@@ -475,9 +475,10 @@ class GaussianDiffusion:
         ):
             final = sample
             #["sample"]
-            i = i+1
-            path = os.path.join('sampling_process', str(i)+'.png')
-            imwrite(path, rgb(final["sample"]))
+            # uncomment the following to visualize the reverse diffusion process
+            # i = i+1
+            # path = os.path.join('sampling_process', str(i)+'.png')
+            # imwrite(path, rgb(final["sample"]))
         return final["sample"]
 
     def p_sample_loop_progressive(
