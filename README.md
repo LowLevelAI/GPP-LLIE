@@ -25,6 +25,7 @@ layer normalization (GPP-LN) and utilize local perceptual priors to guide the at
 ![teaser](images/framework.jpg)
 
 ## 📢 News
+**2025-7-22:** Link for pre-trained weight (LOLv1) is released. We release our generated global and local priors for LOLv1. Test and Training codes are provided. ⭐ <br>
 **2025-6-12:** This repo has been updated. The proposed VLM-based generative perceptual priors extraction pipeline has been added. ⭐ <br>
 
 ## 🛠️ Setup
@@ -66,6 +67,47 @@ cd GPP-LLIE
 
 - **Move CUDA extensions** (/defor_cuda_ext/basicsr/ops/dcn/deform_conv_ext.xxxxxx.so) to the path: **/ops/dcn/**.
 
+
+## 🏃 Testing
+
+### 📷 Download LOLv1 Dataset and Our Generated Global and Local Priors:
+- LOLv1 [Google Drive](https://drive.google.com/file/d/1L-kqSQyrmMueBh_ziWoPFhfsAh50h20H/view?usp=sharing)
+- Generative Priors for LOLv1 [Drive](https://mcmasteru365-my.sharepoint.com/:f:/g/personal/dongw22_mcmaster_ca/EhfamLbh7gZLoW99BlmHFU0BQYwWFKgqL3Erfs9dXkiYgA?e=xWre1r)
+
+### ⬇ Download Pre-trained Weight for LOLv1
+
+Download [Pre-trained weight for LOLv1 Dataset](https://mcmasteru365-my.sharepoint.com/:u:/g/personal/dongw22_mcmaster_ca/EWTcRm7rQc5Ao3qfLcc98wkBhBByYPnMN7csOPBJREV0TA). 
+
+### 🚀 Run inference
+- Inference without GT mean adjustment
+
+```bash
+python test.py
+```
+
+- Inference with GT mean adjustment
+
+```bash
+python test_adjust.py
+```
+
+Please update the weight path, input_dir in the test code. You can also find save_dir for outputs there. For your convenience, results obtained from our device can be found here: [With GT](https://mcmasteru365-my.sharepoint.com/:f:/g/personal/dongw22_mcmaster_ca/EoME8pKrLtdAs9ePRKpY9nIB_eWEcnNlwZZT-wYCVwvWHw?e=hrV22C), [Without GT](https://mcmasteru365-my.sharepoint.com/:f:/g/personal/dongw22_mcmaster_ca/EjvlFOE1IBVKsSdq6uXS7eEBnYyfmALci6ZocY60aOpSAw?e=Ekz6eo)
+
+## 🏋️ Training
+
+Please follow above instructions to load  dataset, generative priors, and pre-trained weight (we need the state_dict of vae for training).
+
+First, train the diffusion transformer mdoel and the conditional encoder.
+
+```bash
+python train_dit.py
+```
+
+Second, train the second decoder for enhanced performance.
+
+```bash
+python train_decoder2.py
+```
 
 ## ✏️ Contributing
 
