@@ -1,1 +1,1 @@
-Put weights here. Pre-trained weights will be uploaded soon.
+Put weights here. Pre-trained weights for LOLv1 can be obtained from [Drive](https://mcmasteru365-my.sharepoint.com/:u:/g/personal/dongw22_mcmaster_ca/EWTcRm7rQc5Ao3qfLcc98wkBhBByYPnMN7csOPBJREV0TA?e=5bA7vE).
