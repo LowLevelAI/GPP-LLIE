@@ -301,7 +301,7 @@ class LoL_Dataset_RIDCP(data.Dataset):
         self.crop_size = self.opt['GT_size']
         
         if train:
-            self.root = os.path.join(self.root, 'all')
+            self.root = os.path.join(self.root, 'train')
         else:
             self.root = os.path.join(self.root, 'test')
         if train:
@@ -384,14 +384,10 @@ class LoL_Dataset_RIDCP(data.Dataset):
                 
                 hr, lr, quality_map = paired_random_crop(hr, lr, quality_map, self.crop_size, input_gt_size // input_lq_size)
             
-            #hr, lr, quality_map = augment([hr, lr, quality_map], self.opt['use_flip'],self.opt['use_rot'])
-            
             hr = self.to_tensor(hr)
             lr = self.to_tensor(lr)
 
             quality_map = self.to_tensor(quality_map)
-
-            #print(quality_map.shape)
 
             return {'LQ': lr, 'GT': hr, 'LQ_path': f_name, 'GT_path': f_name, 'global':vis, 'local': quality_map}
             
@@ -400,9 +396,7 @@ class LoL_Dataset_RIDCP(data.Dataset):
             
             hr = self.to_tensor(hr)
             lr = self.to_tensor(lr)
-            
-            #quality_map = self.to_tensor(quality_map)
-            #print(quality_map.shape)
+
             return {'LQ': lr, 'GT': hr,  'GT_path': f_name, 'padding_params': padding_params, 'global':vis, 'local': quality_map.squeeze(0)}
         
 
