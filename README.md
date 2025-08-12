@@ -111,7 +111,7 @@ python train_decoder2.py
 ```
 
 ## :page_facing_up: Generative Perceptual Prior Extraction Pipeline
-Please go to [Generative Perceptual Prior Extraction Pipeline](CONTRIBUTING.md) for detailed instruction. Our generated generative priors can be found here:  [LOLv2_real](https://mcmasteru365-my.sharepoint.com/:f:/g/personal/dongw22_mcmaster_ca/EoME8pKrLtdAs9ePRKpY9nIB_eWEcnNlwZZT-wYCVwvWHw?e=hrV22C), [LOLv2_syn](https://mcmasteru365-my.sharepoint.com/:f:/g/personal/dongw22_mcmaster_ca/EjvlFOE1IBVKsSdq6uXS7eEBnYyfmALci6ZocY60aOpSAw?e=Ekz6eo)
+Please go to [Generative Perceptual Prior Extraction Pipeline](Generative-Perceptual-Prior-Extraction/README.md) for detailed instruction. Our generated generative priors can be found here:  [LOLv2_real](https://mcmasteru365-my.sharepoint.com/:f:/g/personal/dongw22_mcmaster_ca/Env3QgH_9RpKpoTH8hotD3IB0FayQV22-qPfVJpZ374hEw?e=1qaDxW), [LOLv2_syn](https://mcmasteru365-my.sharepoint.com/:f:/g/personal/dongw22_mcmaster_ca/EgKsPHVm9lVNtZoQkTaId0UB1gylqokSptbfuvsQhX5BAg?e=dn0AjY).
 
 
 ## ✏️ Contributing
