@@ -25,6 +25,7 @@ layer normalization (GPP-LN) and utilize local perceptual priors to guide the at
 ![teaser](images/framework.jpg)
 
 ## 📢 News
+**2025-8-12:** We release the **Generative Perceptual Prior Extraction** pipeline, as well as the generated global and local priors for LOLv2-real and LOLv2-syn datasets. We release our generated global and local priors for LOLv1. Test and Training codes are provided. 🚀 <br>
 **2025-7-22:** Link for pre-trained weight (LOLv1) is released. We release our generated global and local priors for LOLv1. Test and Training codes are provided. ⭐ <br>
 **2025-6-12:** This repo has been updated. The proposed VLM-based generative perceptual priors extraction pipeline has been added. ⭐ <br>
 
@@ -108,6 +109,10 @@ Second, train the second decoder for enhanced performance.
 ```bash
 python train_decoder2.py
 ```
+
+## :page_facing_up: Generative Perceptual Prior Extraction Pipeline
+Please go to [Generative Perceptual Prior Extraction Pipeline](CONTRIBUTING.md) for detailed instruction. Our generated generative priors can be found here:  [LOLv2_real](https://mcmasteru365-my.sharepoint.com/:f:/g/personal/dongw22_mcmaster_ca/EoME8pKrLtdAs9ePRKpY9nIB_eWEcnNlwZZT-wYCVwvWHw?e=hrV22C), [LOLv2_syn](https://mcmasteru365-my.sharepoint.com/:f:/g/personal/dongw22_mcmaster_ca/EjvlFOE1IBVKsSdq6uXS7eEBnYyfmALci6ZocY60aOpSAw?e=Ekz6eo)
+
 
 ## ✏️ Contributing
 
