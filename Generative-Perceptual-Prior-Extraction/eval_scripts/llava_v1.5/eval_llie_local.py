@@ -90,14 +90,14 @@ def patchify_numpy(img, patchify_factor=32):
     assert h1 % patchify_factor == 0
     assert w1 % patchify_factor == 0
 
-    patch_h = h1 / patchify_factor
-    patch_w = w1 / patchify_factor
+    patch_h = h1 // patchify_factor
+    patch_w = w1 // patchify_factor
 
     output = []
 
     for i in range(patchify_factor):
         for j in range(patchify_factor):
-            a = img[int(patch_h*(i)):int(patch_h*(i+1)), int(patch_w*(j)):int(patch_w*(j+1)), :]
+            a = img_padding[int(patch_h*(i)):int(patch_h*(i+1)), int(patch_w*(j)):int(patch_w*(j+1)), :]
             #print(a.shape)
             output.append(a)
     return output, padding_params
